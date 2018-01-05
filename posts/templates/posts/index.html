@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+<head>
+    <title>Posts</title>
+</head>
+<body>
+    <br /><br />
+    {% for post in posts %}
+    <a href="{% url 'post_detail' post.id %}" >{{ post.title }}</a>
+    <br /><br />
+    {{ post.published }}
+    <br /><br />
+    <img src="{{ post.image.url }}" />
+    <br /><br />
+    {{ post.summary }}
+    <br /><br />
+    {% endfor %}
+</body>
+</html>
